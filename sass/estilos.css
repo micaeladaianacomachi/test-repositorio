@@ -1,0 +1,239 @@
+.tamaniotitulo {
+  font-variant: small-caps;
+}
+
+.container {
+  font-variant: small-caps;
+  color: #4e0a3a;
+}
+
+h2 {
+  color: #4e0a3a;
+}
+
+.contenedor1 {
+  color: #4e0a3a;
+}
+
+.contenedor1 span {
+  color: black;
+}
+
+/* css botones */
+.BtnMenuInicio {
+  text-decoration: none;
+  font-size: 35px;
+  color: #441137;
+  display: inline-block;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #c2c2c2;
+  margin: 20px;
+}
+
+.BtnMenuInicio:hover {
+  text-decoration: none;
+  font-size: 35px;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #000;
+}
+
+.BtnMenuInicio.active {
+  text-decoration: none;
+  font-size: 35px;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 6px 10px;
+  background-color: #000;
+}
+
+.divisorMenu {
+  display: inline-block;
+  height: 30px;
+  width: 3px;
+  background-color: #000;
+}
+
+/* css elementosheader */
+.ElementosDeHeader {
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* titulo */
+.tamaniotitulo {
+  font-size: 50px;
+  color: #f00cb7;
+  text-decoration: none;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(blue), color-stop(indigo), to(violet));
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+@-webkit-keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+/* header */
+.header {
+  background-color: #ffe6e6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+/* css body */
+body {
+  background-image: url("https://media.istockphoto.com/vectors/cat-faces-and-paws-pattern-vector-id1035482546");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+/* css logo */
+.logo {
+  position: relative;
+  width: 100px;
+  left: 10px;
+  padding: 0px;
+  margin: 0px;
+  top: 10px;
+}
+
+.contenedor1 {
+  margin: auto auto;
+  padding: 20px 0px;
+  width: 80%;
+}
+
+.contenedor {
+  margin: auto auto;
+  padding: 20px 0px;
+  width: 80%;
+}
+
+.listadoanimales {
+  list-style: none;
+  margin: auto auto;
+  padding: 30px 0px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 90%;
+  white-space: nowrap;
+}
+
+/* .itemGatitos{
+    display:inline-block;
+    height:90%;
+    margin: 5px 15px;
+  } */
+.contenedorMascotas {
+  background-color: #f2f2f2;
+  border: 1px solid #000;
+  border-radius: 10px;
+  color: #000;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.igDeRescatistas {
+  font-size: 40px;
+  color: #f00cb7;
+  text-decoration: none;
+}
+
+.VentaProductos {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "VentaDelProducto producto" s;
+}
+
+.imgMascota {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* prueba */
+body {
+  background: #eeeded;
+}
+
+.card {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #FFF;
+}
+
+.card:hover {
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card > .card-inner {
+  padding: 10px;
+}
+
+.card .header h2, h3 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.card .header {
+  margin-bottom: 5px;
+}
+
+.card img {
+  width: 100%;
+}
+
+/* fin prueba */
+/* .d-block  {
+      width: ;
+
+  } */
+/*# sourceMappingURL=estilos.css.map */

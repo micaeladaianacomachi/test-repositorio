@@ -1,0 +1,198 @@
+$color1:rgb(78, 10, 58);
+.tamaniotitulo{
+    font-variant: small-caps;
+}
+.container{
+    font-variant: small-caps;
+    color:$color1;
+}
+h2{
+    color: $color1;
+}
+.contenedor1{
+    color:$color1;
+    span{
+        color:black
+
+    }
+
+}
+// prueba
+/* css botones */
+.BtnMenuInicio{
+    text-decoration: none;
+    font-size: 35px;
+    color: rgb(68, 17, 55);
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #c2c2c2;
+    margin: 20px;
+
+    } 
+.BtnMenuInicio:hover {
+     text-decoration: none;
+     font-size: 35px;
+     color: #fff;
+     border:1px solid #000;
+     border-radius: 5px;
+     padding: 5px 10px;
+     background-color:#000;
+  
+ }   
+ .BtnMenuInicio.active{
+     text-decoration: none;
+     font-size: 35px;
+     color: #fff;
+     border: 1px solid #000;
+     border-radius: 5px;
+     padding: 6px 10px;
+     background-color: #000
+ } 
+ .divisorMenu{
+    display:inline-block;
+    height:30px;
+    width:3px;
+    background-color:#000;
+  }
+/* css elementosheader */
+.ElementosDeHeader{
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* titulo */
+.tamaniotitulo{
+    font-size: 50px;
+    color: rgb(240, 12, 183);
+    text-decoration:none; 
+    transition: all 3s;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+@keyframes aparecer{
+    0% {
+         opacity:0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+/* header */
+.header{
+    background-color: #ffe6e6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+/* css body */
+body{
+    background-image:url("https://media.istockphoto.com/vectors/cat-faces-and-paws-pattern-vector-id1035482546");
+    background-repeat: repeat;
+    background-attachment: fixed; 
+  }
+
+/* css logo */
+.logo{
+position:relative;
+width: 100px;
+left: 10px;
+padding: 0px;
+margin: 0px;
+top: 10px;
+
+}
+.contenedor1{
+    margin: auto auto;
+    padding:20px 0px;
+    width:80%;
+  }
+
+.contenedor{
+    margin: auto auto;
+    padding:20px 0px;
+    width:80%;
+  }
+.listadoanimales{
+    list-style:none;
+    margin: auto auto;
+    padding: 30px 0px;
+    overflow-x:auto ;
+    overflow-y: hidden;
+    width: 90%;
+    white-space: nowrap;
+}
+/* .itemGatitos{
+    display:inline-block;
+    height:90%;
+    margin: 5px 15px;
+  } */
+.contenedorMascotas{
+    background-color:#f2f2f2;
+     border:1px solid #000;
+     border-radius:10px; 
+    color:#000;
+     display:inline-block; 
+    padding:10px;
+    text-align:center;
+    text-decoration:none;
+ }
+.igDeRescatistas{
+    font-size: 40px;
+    color: rgb(240, 12, 183);
+    text-decoration:none;  
+}
+.VentaProductos{
+    display: grid;
+    grid-template-areas: "VentaDelProducto producto" s;
+  
+}
+.imgMascota{
+   height: 100%;
+   width: 100%;
+   background-size: cover;
+   background-position: center;
+
+}
+/* prueba */
+body {
+    background: #eeeded;
+  }
+  
+  .card {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.2s ease-in-out;
+    box-sizing: border-box;
+    margin-top:10px;
+    margin-bottom:10px;
+    background-color:#FFF;
+  }
+  
+  .card:hover {
+    box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  .card > .card-inner {
+    padding:10px;
+  }
+  .card .header h2, h3 {
+    margin-bottom: 0px;
+    margin-top:0px;
+  }
+  .card .header {
+    margin-bottom:5px;
+  }
+  .card img{
+    width:100%;
+  }
+  /* fin prueba */
+
+  /* .d-block  {
+      width: ;
+
+  } */
