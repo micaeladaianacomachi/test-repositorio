@@ -1,27 +1,32 @@
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
 $color1:rgb(78, 10, 58);
+
 .tamaniotitulo{
     font-variant: small-caps;
-}
-@mixin reset-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    font-weight: map.get($font-weights, "bold");
 }
 
-@mixin horizontal-list {
-  @include reset-list;
-
-  li {
-    display: inline-block;
-    margin: {
-      left: -2px;
-      right: 2em;
-    }
-  }
+@mixin BordeArcoiris {
+  -webkit-transition: all 2s;
+  transition: all 3s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(blue), color-stop(indigo), to(violet));
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
 }
 
-nav ul {
-  @include horizontal-list;
+@mixin bordeTitulo {
+  @include BordeArcoiris;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.bordeTitulo {
+  @include bordeTitulo;
 }
 .container{
     font-variant: small-caps;
@@ -84,16 +89,27 @@ h2{
 }
 
 /* titulo */
-.tamaniotitulo{
-    font-size: 50px;
-    color: rgb(240, 12, 183);
-    text-decoration:none; 
-    transition: all 3s;
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+.tamaniotitulo {
+  font-size: 50px;
+  color: #f00cb7;
+  text-decoration: none;
+  
 }
+
+.bordeTitulo{
+  padding: 10px 20px;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(blue), color-stop(indigo), to(violet));
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
 @keyframes aparecer{
     0% {
          opacity:0;

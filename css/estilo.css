@@ -43,16 +43,35 @@
 }
 
 /* titulo */
-.tamaniotitulo{
-    font-size: 50px;
-    color: rgb(240, 12, 183);
-    text-decoration:none; 
-    transition: all 3s;
-    animation-duration: 3s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+.titulo{
+  display: inline-block;
+  background-color: #ffe6e6;
+  border-radius: 10px;
+  margin: auto;
+  padding: 5px;
 }
+
+.tamaniotitulo {
+  font-size: 50px;
+  color: #f00cb7;
+  text-decoration: none;
+}
+
+.bordeTitulo{
+  padding: 10px;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(blue), color-stop(indigo), to(violet));
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  border-radius: 10px;
+}
+
 @keyframes aparecer{
     0% {
          opacity:0;
