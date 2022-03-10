@@ -1,33 +1,39 @@
 $font-weights: ("regular": 400, "medium": 500, "bold": 700);
 $color1:rgb(78, 10, 58);
 
-.tamaniotitulo{
-    font-variant: small-caps;
-    font-weight: map.get($font-weights, "bold");
-}
-
 @mixin BordeArcoiris {
-  -webkit-transition: all 2s;
-  transition: all 3s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-name: slidein;
-          animation-name: slidein;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  background-size: 150% 150%;
   background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(blue), color-stop(indigo), to(violet));
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 @mixin bordeTitulo {
   @include BordeArcoiris;
-  padding: 10px;
-  border-radius: 10px;
+  
+}
+
+.tamaniotitulo{
+    font-variant: small-caps;
+    font-weight: map-get($font-weights, "bold");
+    font-size: 50px;
+    color: #f00cb7;
+    text-decoration: none;
 }
 
 .bordeTitulo {
   @include bordeTitulo;
 }
+
+.titulo{
+  display: inline-block;
+  background-color: #ffe6e6;
+  border-radius: 10px;
+  margin: auto;
+  padding: 5px;
+}
+
 .container{
     font-variant: small-caps;
     color:$color1;
@@ -86,28 +92,6 @@ h2{
 .ElementosDeHeader{
     display: inline-block;
     font-size: 16px;
-}
-
-/* titulo */
-.tamaniotitulo {
-  font-size: 50px;
-  color: #f00cb7;
-  text-decoration: none;
-  
-}
-
-.bordeTitulo{
-  padding: 10px 20px;
-  -webkit-transition: all 3s;
-  transition: all 3s;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-name: slidein;
-          animation-name: slidein;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  background-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(orange), color-stop(yellow), color-stop(green), color-stop(blue), color-stop(indigo), to(violet));
-  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
 }
 
 @keyframes aparecer{
@@ -229,7 +213,21 @@ body {
   }
   /* fin prueba */
 
-  /* .d-block  {
-      width: ;
+  .wpp-Circle{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+  font-size:30px;
+    box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
 
-  } */
+.wpp-Icon{
+    margin-top:16px;
+}
