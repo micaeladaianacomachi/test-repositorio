@@ -336,4 +336,19 @@ input:checked + .slider:before {
 }
 
 /**/
+.ImgAdopta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: "400px";
+  height: "300px";
+}
+
+.ImgAdopta:hover {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
 /*# sourceMappingURL=estilos.css.map */
