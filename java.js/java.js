@@ -11,7 +11,7 @@ let productos = [
 ]
 
 let carritoDeCompra = []
-    function producto (_nombre_descripcion_precio) {
+    function Producto (_nombre_descripcion_precio) {
         this.nombre = _nombre 
         this.descripcion = _descripcion 
         this.precio = _precio 
