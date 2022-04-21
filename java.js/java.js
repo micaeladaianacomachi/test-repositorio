@@ -62,11 +62,11 @@
 //     console.log("Se ha eliminado el producto")
 // }
 
-// const btn = document.getElementById ('btnMain')
-// btn.addEventListener ('click', respuestaClick)
-// function respuestaClick () {
-//     alert('Te postlaste con exito para ser hogar provisorio')
-// }
+const btn = document.getElementById ('btnMain')
+btn.addEventListener ('click', respuestaClick)
+function respuestaClick () {
+    alert('Te postlaste con exito para ser hogar provisorio')
+}
 
 
 class Producto {
