@@ -1,0 +1,1 @@
+swal ( " ¡Hola! " , " Adoptar es muy importante, animaté " , " Éxito " )   ;

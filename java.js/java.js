@@ -1,10 +1,12 @@
 
 
-const btn = document.getElementById ('btnMain')
-btn.addEventListener ('click', respuestaClick)
-function respuestaClick () {
-    alert('Te postlaste con exito para ser hogar provisorio')
-}
+// const btn = document.getElementById ('btnMain')
+// btn.addEventListener ('click', respuestaClick)
+// function respuestaClick () {
+//     alert('Te postlaste con exito para ser hogar provisorio')
+// }
+// swal ( " ¡Buen trabajo! " , " ¡Te postulaste con éxito! " , " Éxito " )   ;
+
 
 btnAdd.onclick= e =>  {
 swal ({
@@ -184,6 +186,7 @@ let hola = localStorage.getItem ('hola')
 
 localStorage.removeItem('hola')
 
+
 }, false);
 
-
+swal ( " ¡Buen trabajo! " , " ¡Te postulaste con éxito! " , " Éxito " )   ;
