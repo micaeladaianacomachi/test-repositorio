@@ -8,21 +8,21 @@
 // swal ( " ¡Buen trabajo! " , " ¡Te postulaste con éxito! " , " Éxito " )   ;
 
 
-btnAdd.onclick= e =>  {
-swal ({
-    title : "se agrego el producto",
-    icon:"success",
-})
-};
+// btnAdd.onclick= e =>  {
+// swal ({
+//     title : "se agrego el producto",
+//     icon:"success",
+// })
+// };
 
 class Producto {
     constructor(_codigo, _nombre, _descripcion, _precio, _stock, _cantidadEnCarrito) {
-      this.codigo = _codigo;
-      this.nombre = _nombre;
-      this.descripcion = _descripcion;
-      this.precio = _precio;
-      this.stock = _stock;
-      this.cantidadEnCarrito = _cantidadEnCarrito;
+        this.codigo = _codigo;
+        this.nombre = _nombre;
+        this.descripcion = _descripcion;
+        this.precio = _precio;
+        this.stock = _stock;
+        this.cantidadEnCarrito = _cantidadEnCarrito;
     }
 }
 
@@ -36,7 +36,6 @@ let productos = [
     new Producto ("7" ,"Huesito","color amarillo",800, 10, 1),
     new Producto ("8" ,"Correa alitas","color rosa", 1000, 10, 1),
     new Producto ("9" ,"Correa extensible","color rojo",1300, 10, 1),
-    new Producto ("11" ,"Correa extensible","color blanca",1700, 2, 1)
 ]
 
 let carritoDeCompra = []
