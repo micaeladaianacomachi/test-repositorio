@@ -1,0 +1,74 @@
+[
+    {
+      "codigo": "1",
+      "nombre": "Cat Chow 6kg",
+      "descripcion": "alimentos para gatos adultos",
+      "precio": 3100,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    },
+    {
+      "codigo": "10",
+      "nombre": "Comedor para gatos",
+      "descripcion": "tres divisiones",
+      "precio": 2500,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    },
+    {
+      "codigo": "3",
+      "nombre": "Cepillo de dientes",
+      "descripcion": "para gatos y perros",
+      "precio": 150,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    },
+    {
+      "codigo": "4",
+      "nombre": "Juguete chico para gatos con pelotita",
+      "descripcion": "incluye pelotita de repuesto",
+      "precio": 2500,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    },
+    {
+      "codigo": "5",
+      "nombre": "Juguete grande para gatos con pelotitas",
+      "descripcion": "incluye 2 pelotitas y una de respuesto",
+      "precio": 4000,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    },
+    {
+      "codigo": "6",
+      "nombre": "Plumita para gato",
+      "descripcion": "color rojo",
+      "precio": 1200,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    },
+    {
+      "codigo": "7",
+      "nombre": "Huesito",
+      "descripcion": "color amarillo",
+      "precio": 800,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    },
+    {
+      "codigo": "8",
+      "nombre": "Correa alitas",
+      "descripcion": "color rosa",
+      "precio": 1000,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    },
+    {
+      "codigo": "9",
+      "nombre": "Correa extensible",
+      "descripcion": "color rojo",
+      "precio": 1300,
+      "stock": 10,
+      "cantidadEnCarrito": 1
+    }
+]

@@ -1,20 +1,3 @@
-
-
-// const btn = document.getElementById ('btnMain')
-// btn.addEventListener ('click', respuestaClick)
-// function respuestaClick () {
-//     alert('Te postlaste con exito para ser hogar provisorio')
-// }
-// swal ( " ¡Buen trabajo! " , " ¡Te postulaste con éxito! " , " Éxito " )   ;
-
-
-// btnAdd.onclick= e =>  {
-// swal ({
-//     title : "se agrego el producto",
-//     icon:"success",
-// })
-// };
-
 class Producto {
     constructor(_codigo, _nombre, _descripcion, _precio, _stock, _cantidadEnCarrito) {
         this.codigo = _codigo;
@@ -26,26 +9,19 @@ class Producto {
     }
 }
 
-let productos = [
-    new Producto ("1" ,"Cat Chow 6kg","alimentos para gatos adultos", 3100, 10, 1),
-    new Producto ("10" ,"Comedor para gatos","tres divisiones",2500, 10, 1),
-    new Producto ("3" ,"Cepillo de dientes","para gatos y perros",150, 10, 1),
-    new Producto ("4" ,"Juguete chico para gatos con pelotita","incluye pelotita de repuesto",2500, 10, 1),
-    new Producto ("5" ,"Juguete grande para gatos con pelotitas","incluye 2 pelotitas y una de respuesto",4000, 10, 1),
-    new Producto ("6" ,"Plumita para gato","color rojo",1200, 10, 1),
-    new Producto ("7" ,"Huesito","color amarillo",800, 10, 1),
-    new Producto ("8" ,"Correa alitas","color rosa", 1000, 10, 1),
-    new Producto ("9" ,"Correa extensible","color rojo",1300, 10, 1),
-]
+let productos = []
 
 let carritoDeCompra = []
 
-function ListarProductos() {
-    console.clear();
-    console.log ("Los Productos Disponibles:");
-    for (let index = 0; index < productos.length; index++) {
-        console.log ("Producto: " + index + " - " + productos[index].nombre + "(" + productos[index].descripcion + ") $" + productos[index].precio)
-    } 
+const obtenerProductos = async () => {
+    const respuesta = await fetch("./data/productos.json")
+    const data = await respuesta.json();
+    
+    data.forEach(producto => {
+        productos.push(new Producto(producto.codigo, producto.nombre, producto.descripcion, producto.precio, producto.stock, producto.cantidadEnCarrito))
+    })
+    
+    ListarProductosHtml();
 }
 
 function ListarProductosHtml(){
@@ -53,6 +29,19 @@ function ListarProductosHtml(){
     console.log ("Los Productos Disponibles:");
     let contenedorDeProductos = document.getElementById("productosEnVenta");
     contenedorDeProductos.innerHTML = '';
+
+    //Buscamos el carrito en el localStorage
+    let productosEnLocalStorage = JSON.parse(localStorage.getItem('productosEnTienda'));
+
+    console.log(productosEnLocalStorage);
+
+    //
+    if(productosEnLocalStorage != null) {
+        productos = productosEnLocalStorage;
+    } else{
+        localStorage.setItem('productosEnTienda', JSON.stringify(productos));
+    };
+
     productos.forEach(producto => {
         contenedorDeProductos.insertAdjacentHTML('beforeend', '<div class="col"><div class="card" style="width: 18rem;"><img src="/img/' + producto.codigo + '.jpg" class="card-img-top" alt="' + producto.descripcion + '"><div class="card-body text-center"> <h5 class="card-title">' + producto.nombre + '(' + producto.stock + ')</h5><p class="card-text">$' + producto.precio + '</p><button class="btn btn-success" onclick="AgregarAlCarrito(' + producto.codigo + ')">Comprar</button></div></div></div>')
     });
@@ -69,22 +58,22 @@ function EliminarProducto (index) {
     console.log("Se ha eliminado el producto")
 }
 
-function ListarCarrito() {
-    console.clear();
-    console.log ("Los Productos en el Carrito:");
-    carritoDeCompra.forEach(producto => {
-        console.log ("Producto: " + producto.codigo + " - " 
-                                  + producto.nombre 
-                                  + "(" + producto.descripcion + ") $" 
-                                  + (producto.precio * producto.cantidadEnCarrito) + " " +
-                                  + "($" + producto.precio + "x" + producto.cantidadEnCarrito + ")")
-    });
-    console.log ("Total: $" + PrecioTotal());
-}
-
 function AgregarAlCarrito (codigo) {
+    let mensaje = "";
+
+    //Buscamos el carrito en el localStorage
+    let carritoEnLocalStorage = JSON.parse(localStorage.getItem('carritoDeCompras'));
+
+    //Buscamos los productos en el localStorage
+    let productosEnTienda = JSON.parse(localStorage.getItem('productosEnTienda'));
+
+    //Si no existe el carrito en el localStorage definimos el array vacio
+    if(carritoEnLocalStorage != null) {
+        carritoDeCompra = carritoEnLocalStorage;
+    };
+
     //Encuentra el producto con el codigo recibido
-    const producto = productos.find((element) => { 
+    const producto = productosEnTienda.find((element) => { 
         return element.codigo == codigo 
     })
 
@@ -94,30 +83,46 @@ function AgregarAlCarrito (codigo) {
     })
 
     //Si el producto se encuentra en el carrito, se le suma 1 a la cantidad que se esta comprando
-    if(productoEnCarrito !== undefined)
-        productoEnCarrito.cantidadEnCarrito = producto.cantidadEnCarrito + 1
+    if(productoEnCarrito !== undefined){
+        productoEnCarrito.cantidadEnCarrito = productoEnCarrito.cantidadEnCarrito + 1
+        mensaje += "Ahora tienes: " + productoEnCarrito.cantidadEnCarrito + " de: " + productoEnCarrito.nombre + ", en el carrito";
+    }
     //Si el producto no esta en el carrito se lo agrega
-    else
+    else {
         carritoDeCompra.push(producto)
+        mensaje += "Se agrego 1 " + producto.nombre + " al Carrito.";
+    }
 
     //Modifica el stock del producto encontrado
     producto.stock = producto.stock - 1
 
+    //Guardamos el array en el localStorage
+    localStorage.setItem('carritoDeCompras', JSON.stringify(carritoDeCompra));
+
+    //Guardamos el array en el localStorage
+    localStorage.setItem('productosEnTienda', JSON.stringify(productosEnTienda));
+
     //Recarga el listado de productos
     ListarProductosHtml();
-}
 
-function EliminarDelCarrito (index) {
-
-    const resultado = productos.find((element) => { 
-        return element.codigo == carritoDeCompra[index].codigo 
+    swal({
+        title: "Agregar Producto al Carrito",
+        text: mensaje,
+        icon: "success",
+        buttons: {
+            continuar: "Continuar Comprando!",
+            carrito: "Ir al Carrito"
+        }
     })
-
-    carritoDeCompra.splice(index,1)
-    console.log("Se ha eliminado el producto")
-    resultado.stock = resultado.stock + 1
-
-    listarProductosHtml();
+    .then((value) => {
+        switch (value) {
+            case "continuar":
+                break;
+            case "carrito":
+                location.href = 'carrito.html';
+                break;
+        }
+    });
 }
 
 function PrecioTotal () {
@@ -176,16 +181,5 @@ function Iniciar() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    ListarProductosHtml()
-    localStorage.setItem('welcome', 'hola')
-localStorage.setItem ('hola' , ' holaa')
-
-let mensaje = localStorage.getItem ('welcome')
-let hola = localStorage.getItem ('hola')
-
-localStorage.removeItem('hola')
-
-
+    obtenerProductos();
 }, false);
-
-swal ( " ¡Buen trabajo! " , " ¡Te postulaste con éxito! " , " Éxito " )   ;
